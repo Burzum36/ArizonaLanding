@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page - Birkenstock</title>
+  <!-- Verknüpfung mit Bootstrap-CSS-Dateien -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Benutzerdefinierte Styles -->
+  <style>
+    body {
+      background-image: url("./img/sfondo.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .navbar,
+    .navbar-brand,
+    .nav-link,
+    .jumbotron h1,
+    .jumbotron p,
+    .jumbotron .btn-primary,
+    .footer {
+      color: #283782;
+    }
+
+    .jumbotron {
+      background-color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      padding: 50px;
+      margin-top: 100px;
+    }
+
+    .jumbotron .btn {
+      color: #ffffff;
+    }
+
+    .birkenstock-image {
+      transition: transform 0.3s ease;
+    }
+
+    .birkenstock-image:hover {
+      transform: scale(1.1);
+    }
+
+    .navbar-brand img {
+      height: 30px;
+      margin-right: 5px;
+    }
+
+    .slide-left {
+      animation: slideLeft 1s ease both;
+    }
+
+    .slide-right {
+      animation: slideRight 1s ease both;
+    }
+
+    @keyframes slideLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Footer */
+    .footer {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      text-align: center;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer p {
+      margin-bottom: 0;
+    }
+
+    .footer a {
+      color: #283782;
+      margin: 0 10px;
+    }
+
+    .net-zero-logo {
+      height: 40px;
+      margin-left: 10px;
+    }
+
+    @media (max-width: 767.98px) {
+      .footer {
+        position: static;
+      }
+
+      .jumbotron {
+        margin-top: 20px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .jumbotron {
+        margin-top: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="./img/logo2.png" alt="Logo" />
+      Birkenstock
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Startseite</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Über uns</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Kontakt</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="slide-left">Erkunden Sie die Natur mit dem Komfort von Birkenstock</h1>
+      <img src="./img/product.png" alt="Birkenstock" class="img-fluid birkenstock-image">
+      <p class="slide-right" style="font-size: calc(16px + 4px);">Unsere Sandalen bieten Ihnen maximalen Komfort für Ihre Abenteuer in der Natur. Entdecken Sie unseren Katalog.</p>
+      <a href="#" class="btn btn-primary">Mehr erfahren</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2023 VP - Alle Rechte vorbehalten. Datenschutzerklärung</p>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" style="color: #283782;"></i></a>
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook" style="color: #283782;"></i></a>
+      <img src="./img/Netzero.png" alt="Net Zero Website" class="net-zero-logo">
+    </div>
+  </footer>
+
+  <!-- Verknüpfung mit den Bootstrap-JavaScript-Dateien -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/227f3724c8.js" crossorigin="anonymous"></script>
+  <script>
+    var birkenstockImage = document.querySelector(".birkenstock-image");
+
+    birkenstockImage.addEventListener("mouseenter", function() {
+      birkenstockImage.style.transform = "scale(1.1)";
+    });
+
+    birkenstockImage.addEventListener("mouseleave", function() {
+      birkenstockImage.style.transform = "scale(1)";
+    });
+  </script>
+</body>
+</html>
